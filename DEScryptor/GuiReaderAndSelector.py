@@ -4,18 +4,16 @@ import tkinter as tk
 from future.moves.tkinter import filedialog
 from tkinter import Variable
 import numpy as np
-import CryptorOfNumberFile as c
 import TxtOfNumber as TN
 
 def open_file():#打开文件，读取路径
     FilePath.set(filedialog.askopenfilename())
 
 def transform():
-    print(Password.get())
-    if OperationChoice.get()==1:
-        c.Encrypte(FileContent.get(),FilePath.get())
+    if TypeChoice == 1:
+        TN.transform(FilePath,Password.get())
     else:
-        c.Decrypte(FileContent.get(),FilePath.get())                
+        pass
 
 root = tk.Tk()#创建窗口
 root.title("DES")
@@ -69,30 +67,3 @@ Password = tk.Entry(PasswordFrame,font = 'Helvetica -15')
 Password.pack()
 
 root.mainloop()
-
-'''
-import tkinter
-root = tkinter.Tk()
-r = tkinter.StringVar()
-r.set('1')
-radio = tkinter.Radiobutton(root,variable = r,value ='1',text='Radio1')
-radio.pack()
-radio = tkinter.Radiobutton(root,variable = r,value ='2',text='Radio2')
-radio.pack()
-radio = tkinter.Radiobutton(root,variable = r,value ='3',text='Radio3')
-radio.pack()
-radio = tkinter.Radiobutton(root,variable = r,value ='4',text='Radio4')
-radio.pack()
-c = tkinter.IntVar()
-c.set(1)
-check = tkinter.Checkbutton(root,
-text='Checkbutton',
-variable = c,
-onvalue =1,
-offvalue=2
-)
-check.pack()
-root.mainloop()
-print(r.get())
-print(c.get())
-'''
