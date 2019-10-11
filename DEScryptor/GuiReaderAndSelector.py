@@ -10,8 +10,8 @@ def open_file():#打开文件，读取路径
     FilePath.set(filedialog.askopenfilename())
 
 def transform():
-    if TypeChoice == 1:
-        TN.transform(FilePath,Password.get())
+    if TypeChoice.get() == 1:
+        TN.transform(FilePath.get(),Password.get(),OperationChoice.get())
     else:
         pass
 
