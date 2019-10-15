@@ -60,7 +60,7 @@ Confirm.pack(side = tk.BOTTOM)
 
 
 # 右边的frame存放密钥
-PasswordFrame = tk.LabelFrame(root,text = '密钥', font = 'Helvetica -15')
+PasswordFrame = tk.LabelFrame(root,text = '密钥（请输入16个16进制数）', font = 'Helvetica -15')
 PasswordFrame.pack(side = tk.RIGHT)
 
 Password = tk.Entry(PasswordFrame,font = 'Helvetica -15')

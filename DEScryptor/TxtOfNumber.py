@@ -3,7 +3,8 @@
 import CryptorOfNumberFile as C
 
 def transform(FilePath,Key,operation):
-    Key = ' '.join(['{:08b}'.format(int(c)).replace('0b','') for c in Key])
+    #将密钥转换为64位二进制
+    Key = ' '.join(['{:04b}'.format(int(c,16)).replace('0b','') for c in Key])
     Key = Key.replace(' ', '')
     
     #求需要加密到的文件的路径以及名字
@@ -36,7 +37,7 @@ def transform(FilePath,Key,operation):
             
             #print(CryContent)
             
-            #转换为10进制
+            #将结果转换为10进制
             WriteContentFull = []
             i = 0
             while(i+8<=len(CryContent)):
