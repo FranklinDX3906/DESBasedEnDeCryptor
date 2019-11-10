@@ -46,6 +46,7 @@ def transform(FilePath,Key,operation):
                 WriteContent = [str(int(WriteContent,2))]
                 WriteContentFull = WriteContentFull+WriteContent
                 i= i+8
+            
             with open(WritePath,'a') as CryFile:
                 WriteContentFull = ''.join(str(c) for c in WriteContentFull)
                 #print(WriteContentFull)
